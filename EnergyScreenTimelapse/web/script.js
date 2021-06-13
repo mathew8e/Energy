@@ -1,9 +1,11 @@
 
 function collectData(){
-    var range = document.getElementById("range")
-    var lapsName = document.getElementById("filename")
+    var range = document.getElementById("range").value
+    var lapsName = document.getElementById("filename").value
+    eel.start(lapsName) 
 
-    eel.start(range, range, lapsName)
+    eel.asyncfunc(range)
+    
 }
 function stop(){
     eel.stop()
