@@ -13,7 +13,7 @@ def close_callback(route, websockets):
 	exitcode = True
 	if not websockets:
 		print('Bye!')
-		loop.close()
+		loop.stop()
 		sys.exit()
 		exit()
 
@@ -35,7 +35,7 @@ async def frameLoop(speed, lapsName):
 		out.write(frame)
 		#cv2.imshow("show",frame)
 		print("Frame taken...")
-		await asyncio.sleep(int(speed))
+		await asyncio.sleep(float(speed))
 
 
 @async_eel.expose
