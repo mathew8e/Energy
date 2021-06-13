@@ -6,6 +6,13 @@ import eel
 import io
 import sys
 
+
+def close_callback(route, websockets):
+    if not websockets:
+        print('Bye!')
+        exit()
+
+
 eel.init('web')
 
 screen_size = (1920,1080)
@@ -25,9 +32,15 @@ def start(frameskip, getSpeed, lapsName):
 				frameskip = 0
 			#cv2.imshow("show",frame)
 			frameskip += 1
+			print("Frame taken...")
 	except:
 		print(sys.exc_info()[0])
 		exit()
 
-eel.start('index.html', size=(700, 600))
+@eel.expose
+def stop():
+	print("stopping..")
+	quit()
+
+eel.start('index.html', size=(700, 600), close_callback=close_callback)
 

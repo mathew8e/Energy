@@ -5,10 +5,14 @@
         <meta charset="utf-8">
         <script type="text/javascript" src="/eel.js"></script>
         <script type="text/javascript" src="script.js"></script>
-        <title>Energy screen recorder</title>
+        <title>Energy screen timelapse recorder</title>
     </head>
     <body>
         
-        <h1>test</h1>
+        <h1>Energy screen timelapse recorder</h1>
+        filname <input type="text" id="filename"><br>
+        speed <input type="range" id="range" onchange="updateMonitor(this.value)"> <div id="monitor">null</div><br>
+        <button onclick="collectData()">Start</button><br>
+        <button onclick="stop()">stop</button>
     </body>
 </html>
