@@ -27,7 +27,7 @@ fourcc = cv2.VideoWriter_fourcc(*"mp4v")
 @async_eel.expose
 async def frameLoop(speed, lapsName):
 	global fourcc, screen_size
-	out = cv2.VideoWriter('output/test.mp4',fourcc,20.0,(screen_size))
+	out = cv2.VideoWriter(str(lapsName)+'.mp4',fourcc,20.0,(screen_size))
 	while loop.is_running():
 		img = pyautogui.screenshot()
 		frame = np.array(img)

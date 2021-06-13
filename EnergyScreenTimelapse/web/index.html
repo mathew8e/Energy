@@ -11,7 +11,7 @@
         
         <h1>Energy screen timelapse recorder</h1>
         filname <input type="text" id="filename"><br>
-        speed <input type="range" id="range" onchange="updateMonitor(this.value)"> <div id="monitor">null</div><br>
+        interval between frames <input type="range" id="range" onchange="updateMonitor(this.value)"> <div id="monitor">null</div><br>
         <button onclick="collectData()">Start</button><br>
         <button onclick="stop()">stop</button>
     </body>
