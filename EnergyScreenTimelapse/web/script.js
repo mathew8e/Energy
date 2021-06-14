@@ -1,9 +1,8 @@
 
 function collectData(){
     var range = document.getElementById("range").value
-    var lapsName = document.getElementById("filename").value
-
-    eel.frameLoop(range, lapsName)
+    eel.write("sadf")
+    eel.frameLoop(range)
     
 }
 function stop(){

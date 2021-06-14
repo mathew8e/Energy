@@ -26,10 +26,14 @@ fourcc = cv2.VideoWriter_fourcc(*"mp4v")
 	
 
 @async_eel.expose
-async def frameLoop(speed, lapsName):
+async def frameLoop(speed):
 	global fourcc, screen_size, directory_path
-	out = cv2.VideoWriter(str(directory_path),fourcc,20.0,(screen_size))
-	print("created file at ", directory_path)
+	print("started the recording function...")
+	try:
+		out = cv2.VideoWriter(str(directory_path),fourcc,20.0,(screen_size))
+		print("created file at ", directory_path)
+	except:
+		print("writing the file failed...")
 	while loop.is_running():
 		img = pyautogui.screenshot()
 		frame = np.array(img)
