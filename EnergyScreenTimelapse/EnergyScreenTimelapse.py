@@ -6,8 +6,11 @@ import async_eel
 import io
 import sys
 import asyncio
+import tkinter 
+import tkinter.filedialog as filedialog
 
 loop = asyncio.get_event_loop()
+directory_path = ""
 
 def close_callback(route, websockets):
 	exitcode = True
@@ -18,16 +21,15 @@ def close_callback(route, websockets):
 		exit()
 
 
-
 screen_size = (1920,1080)
 fourcc = cv2.VideoWriter_fourcc(*"mp4v")
 	
 
-
 @async_eel.expose
 async def frameLoop(speed, lapsName):
-	global fourcc, screen_size
-	out = cv2.VideoWriter(str(lapsName)+'.mp4',fourcc,20.0,(screen_size))
+	global fourcc, screen_size, directory_path
+	out = cv2.VideoWriter(str(directory_path),fourcc,20.0,(screen_size))
+	print("created file at ", directory_path)
 	while loop.is_running():
 		img = pyautogui.screenshot()
 		frame = np.array(img)
@@ -48,8 +50,19 @@ async def stop():
 
 @async_eel.expose
 def write(a):
-	sleep(0.1)
 	print(a)
+
+@async_eel.expose
+def selectFolder():
+	global directory_path
+	print("Here")
+	root = tkinter.Tk()
+	root.attributes("-topmost", True)
+	root.withdraw()
+	directory_path = filedialog.asksaveasfilename(
+                defaultextension='.mp4', filetypes=[("mp4", '*.mp4')],
+                title="Choose filename")
+	async_eel.writePath(directory_path)
 
 async def main():
 	async_eel.init('web')

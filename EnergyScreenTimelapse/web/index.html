@@ -10,9 +10,11 @@
     <body>
         
         <h1>Energy screen timelapse recorder</h1>
-        filname <input type="text" id="filename"><br>
         interval between frames <input type="range" id="range" oninput="updateMonitor(this.value)" min="0" max="10" step="0.1"> <div id="monitor">null</div><br>
         <button onclick="collectData()">Start</button><br>
-        <button onclick="stop()">stop</button>
+        <button onclick="stop()">stop</button><br>
+        <button class="items" onclick="select()">Choose folder</button><br>
+        <div id="pathview">path</div>
+
     </body>
 </html>

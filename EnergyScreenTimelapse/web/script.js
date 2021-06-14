@@ -13,3 +13,10 @@ function stop(){
 function updateMonitor(val){
     document.getElementById("monitor").innerHTML = val
 }
+function select(){
+    eel.selectFolder();
+}
+eel.expose(writePath)
+function writePath(path){
+    document.getElementById("pathview").innerHTML = path
+}
