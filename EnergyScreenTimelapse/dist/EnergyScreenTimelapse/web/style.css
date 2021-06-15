@@ -1,0 +1,37 @@
+:root{
+    --buttonbg: #F2F562;
+    --borderbutton: #DEE069;
+    --secondarytext: #4e4e4e;
+    --backgroundgray: #EAEAEA;
+}
+.monitornumber{
+    font-size: 48px;
+}
+#range{
+    width: 100%;
+}
+.functionbuttons{
+    background-color: var(--buttonbg);
+    border: solid 2px var(--borderbutton);
+    border-radius: 5px;
+    font-size: 24px;
+}
+.secondarytext{
+    color: var(--secondarytext);
+}
+#pathview{
+    font-size: 24px;
+    background-color: var(--backgroundgray);
+    border-radius: 5px;
+    margin-right: 40px;
+    overflow: auto;
+    padding: 5px;
+}
+.fileimage{
+    width: 50%;
+}
+.pathbutton{
+    background-color: var(--backgroundgray);
+    border: solid 2px var(--secondarytext);
+    border-radius: 5px;
+}
