@@ -45,12 +45,12 @@ async def frameLoop(speed):
 
 
 @async_eel.expose
-async def stop():
+def stop():
 	sleep(1)
 	print("stopping..")
-	loop.close()
+	loop.stop()
 	sys.exit()
-	await exit()
+	exit()
 
 @async_eel.expose
 def write(a):

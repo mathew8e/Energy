@@ -24,6 +24,8 @@
     background-color: var(--backgroundgray);
     border-radius: 5px;
     margin-right: 40px;
+    overflow: auto;
+    padding: 5px;
 }
 .fileimage{
     width: 50%;
