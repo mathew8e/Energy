@@ -4,6 +4,9 @@
     --secondarytext: #4e4e4e;
     --backgroundgray: #EAEAEA;
 }
+body{
+    font-family: 'Helvetica';
+}
 .monitornumber{
     font-size: 48px;
 }

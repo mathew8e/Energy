@@ -1,9 +1,8 @@
 
 function collectData(){
     var range = document.getElementById("range").value
-    eel.write("sadf")
     eel.frameLoop(range)
-    
+    alert('The timelapse has started recording')
 }
 function stop(){
     eel.stop()
