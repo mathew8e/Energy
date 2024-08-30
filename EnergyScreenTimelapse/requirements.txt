@@ -7,4 +7,4 @@ PyAutoGUI == 0.9.50
 numpy == 1.18.2
 
 # C:\Users\mathe\Documents\EnergyScreenTimelapse\EnergyScreenTimelapse.py: 1
-opencv_python == 4.2.0.34
+opencv_python == 4.8.1.78
